@@ -4,6 +4,11 @@
     {
         static function imprimir( $resultado, $des = null )
         {
+            return self::organizar( $resultado, $des );
+        }
+
+        static function organizar( $resultado, $des = null )
+        {
             $salida = "";
 
             if( $des == null ) $salida .= "<table border='1px'>";
