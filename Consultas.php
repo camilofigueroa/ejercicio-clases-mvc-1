@@ -1,0 +1,47 @@
+<?php
+
+    include( "Conexion.php" );
+
+    class Consultas extends Conexion
+    {
+        static function consultar_personas()
+        {
+            $conexion = self::conectar();
+     
+            //Esta clase es del modelo.
+            $sql = "SELECT * FROM tb_personas";
+            //echo $sql;
+            $resultado = $conexion->query( $sql );
+
+            return $resultado;
+        }
+
+        static function consultar_persona_nombre( $nombre )
+        {
+            $conexion = self::conectar();
+     
+            //Esta clase es del modelo.
+            $sql = "SELECT * FROM tb_personas WHERE nombre LIKE '%$nombre%'";
+            //echo $sql;
+            $resultado = $conexion->query( $sql );
+
+            return $resultado;
+        }
+
+        static function consultar_citas_medicas()
+        {
+            $conexion = self::conectar();
+     
+            //Esta clase es del modelo.
+            $sql  = " SELECT * ";
+            $sql .= " FROM tb_personas ";
+            $sql .= " WHERE documento not in ";
+            $sql .= " ( SELECT documento FROM tb_citas_medicas ) ";
+            //echo $sql;
+            $resultado = $conexion->query( $sql );
+
+            return $resultado;
+        }
+
+    }
+    
