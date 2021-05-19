@@ -10,7 +10,7 @@
         <form action="c_autenticar_resultado.php">
             Documento: <input type="text" name="documento"><br>
             Clave: <input type="text" name="clave"><br>
-            <input type="sumit" value="Enviar">
+            <input type="submit" value="Enviar">
         </form>
 
     </body>
