@@ -43,13 +43,11 @@
             return $resultado;
         }
 
-        function autenticacion( $documento, $clave )
-        {
-            include( "Conexion.php" );
-
+        static function autenticacion( $documento, $clave )
+        {            
             $salida = "";
 
-            $conexion = Conexion::conectar();
+            $conexion = self::conectar();
         
             //Esta clase es del modelo.
             $sql  = " SELECT 1 ";
