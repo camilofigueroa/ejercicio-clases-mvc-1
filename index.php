@@ -1,3 +1,4 @@
 <?php
 
-    echo "Hola";
+    //Redirección.
+    header( "location: https://www.sena.edu.co" );
