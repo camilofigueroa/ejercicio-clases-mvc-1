@@ -44,9 +44,7 @@
         }
 
         static function autenticacion( $documento, $clave )
-        {            
-            $salida = "";
-
+        {              
             $conexion = self::conectar();
         
             //Esta clase es del modelo.
@@ -57,14 +55,7 @@
             //echo $sql;
             $resultado = $conexion->query( $sql );
 
-            while( $fila = mysqli_fetch_array( $resultado ) )
-            {
-                $salida = $fila[ 0 ];
-            }
-
-            //return $resultado;
-
-            return $salida;
+            return $resultado;
         }
 
     }
