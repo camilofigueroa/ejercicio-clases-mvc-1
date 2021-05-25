@@ -5,6 +5,9 @@
     include( "Consultas.php" );
     include( "Vimprimir.php" );
 
+    include( "Sesiones.php" );
+    Sesiones::verificar_sesion();
+
     $r = Consultas::consultar_persona_nombre( $b );
     $r = Vimprimir::imprimir( $r );
 
