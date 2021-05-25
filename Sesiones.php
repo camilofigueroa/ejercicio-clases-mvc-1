@@ -13,10 +13,13 @@
 
             if( isset( $_SESSION[ 'usuario' ] ) )
             {
-                if( $_SESSION[ 'usuario' ] == "" )
+                if( TRIM( $_SESSION[ 'usuario' ] ) == "" )
                 {
                     header( "location: c_autenticar.php" );
                 }
-            }
+
+            }else{
+                    header( "location: c_autenticar.php" );
+                }
         }
     }
